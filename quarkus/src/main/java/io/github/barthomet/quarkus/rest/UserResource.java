@@ -6,7 +6,6 @@ import io.github.barthomet.quarkus.domain.model.User;
 import io.github.barthomet.quarkus.domain.repository.UserRepository;
 import io.github.barthomet.quarkus.rest.dto.CreateUserRequest;
 import io.github.barthomet.quarkus.rest.dto.ResponseError;
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 
 import javax.inject.Inject;
@@ -17,6 +16,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Set;
+
 
 @Path("/users")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -45,8 +45,8 @@ public class UserResource {
         User user = new User();
         user.setNome(userRequest.getNome());
         user.setEmail(userRequest.getEmail());
-        user.setSenha(userRequest.getSenha());
-        user.setIdade(userRequest.getIdade());
+//        user.setSenha(userRequest.getSenha());
+//        user.setIdade(userRequest.getIdade());
 
         repository.persist(user);
 
@@ -70,8 +70,8 @@ public class UserResource {
         if (user != null) {
             user.setNome(userData.getNome());
             user.setEmail(userData.getEmail());
-            user.setSenha(userData.getSenha());
-            user.setIdade(userData.getIdade());
+//            user.setSenha(userData.getSenha());
+//            user.setIdade(userData.getIdade());
 
             return Response.ok().build();
         }

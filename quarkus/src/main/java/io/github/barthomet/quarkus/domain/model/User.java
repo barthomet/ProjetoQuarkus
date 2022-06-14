@@ -18,8 +18,8 @@ public class User {
 
     private String nome;
     private String email;
-    private String senha;
-    private Integer idade;
+//    private String senha;
+//    private Integer idade;
 
 
 }

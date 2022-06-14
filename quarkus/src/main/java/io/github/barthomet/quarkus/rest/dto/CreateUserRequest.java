@@ -13,10 +13,10 @@ public class CreateUserRequest {
     private String nome;
     @NotBlank(message = "Email é obrigatório")
     private String email;
-    @NotBlank(message = "Senha é obrigatória")
-    private String senha;
-    @NotNull(message = "Idade é obrigatória")
-    private Integer idade;
+//    @NotBlank(message = "Senha é obrigatória")
+//    private String senha;
+//    @NotNull(message = "Idade é obrigatória")
+//    private Integer idade;
 
 
 }
