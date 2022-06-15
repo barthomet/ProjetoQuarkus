@@ -1,7 +1,6 @@
 package io.github.barthomet.quarkus.rest.dto;
 
 import lombok.Data;
-
 import javax.validation.ConstraintViolation;
 import javax.ws.rs.core.Response;
 import java.util.Collection;
@@ -11,6 +10,9 @@ import java.util.stream.Collectors;
 
 @Data
 public class ResponseError {
+
+    public static final int UNPROCESSABLE_ENTITY_STATUS = 422;
+
     private String message;
     private Collection<FieldError> errors;
 
@@ -26,11 +28,14 @@ public class ResponseError {
                 .map(cv -> new FieldError(cv.getPropertyPath().toString(), cv.getMessage()))
                 .collect(Collectors.toList());
 
-        String message = "Validation Error";
+        String message = "validation error";
 
-        var responseError = new ResponseError(message, errors);
-        return responseError;
+        var responseError = new ResponseError(message,errors);
+        return  responseError;
     }
 
-
+    public Response withStatusCode(int code){
+        return Response.status(code).entity(this).build();
+    }
 }
+

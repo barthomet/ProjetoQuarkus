@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0912473-ffab-4586-8ea6-9348cb5b5634" name="Changes" comment="" />
+    <list default="true" id="d0912473-ffab-4586-8ea6-9348cb5b5634" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/quarkus/src/test/java/io/github/barthomet/quarkus/rest/UserResourceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quarkus/src/main/java/io/github/barthomet/quarkus/rest/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/quarkus/src/main/java/io/github/barthomet/quarkus/rest/UserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quarkus/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/quarkus/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,5 +50,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

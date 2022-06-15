@@ -39,14 +39,12 @@ public class UserResource {
         Set<ConstraintViolation<CreateUserRequest>> violations = validator.validate(userRequest);
         if (!violations.isEmpty()){
             ResponseError responseError = ResponseError.createFromValidation(violations);
-            return Response.status(400).entity(responseError).build();
+            return Response.status(422).entity(responseError).build();
         }
 
         User user = new User();
         user.setNome(userRequest.getNome());
         user.setEmail(userRequest.getEmail());
-//        user.setSenha(userRequest.getSenha());
-//        user.setIdade(userRequest.getIdade());
 
         repository.persist(user);
 
@@ -70,8 +68,6 @@ public class UserResource {
         if (user != null) {
             user.setNome(userData.getNome());
             user.setEmail(userData.getEmail());
-//            user.setSenha(userData.getSenha());
-//            user.setIdade(userData.getIdade());
 
             return Response.ok().build();
         }
@@ -89,6 +85,5 @@ public class UserResource {
             return Response.ok().build();
         }
          return Response.status(Response.Status.NOT_FOUND).build();
-
     }
 }
